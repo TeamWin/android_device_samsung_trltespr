@@ -8,14 +8,14 @@ $(call inherit-product-if-exists, vendor/samsung/trltespr/trltespr-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/samsung/trltespr/overlay
 
 LOCAL_PATH := device/samsung/trltespr
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := $(LOCAL_PATH)/kernAl
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
+#ifeq ($(TARGET_PREBUILT_KERNEL),)
+#	LOCAL_KERNEL := $(LOCAL_PATH)/kernAl
+#else
+#	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+#endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
+    $(LOCAL_PATH)/kernAl:kernel
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.qcom:recovery/root/fstab.qcom

@@ -32,13 +32,15 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x105c0000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105c0000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/samsung/trltespr/kernAl
+#TARGET_PREBUILT_KERNEL := device/samsung/trltespr/kernAl
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 # Kernel Configs
-TARGET_KERNEL_SOURCE := kernel/samsung/trltespr
-#TARGET_KERNEL_CONFIG := msm8974_sec_defconfig
-#TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
-#TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_hlte_eur_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/trlte
+TARGET_KERNEL_CONFIG := apq8084_sec_defconfig
+TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := apq8084_sec_trlte_twrp_defconfig
+VARIANT_CONFIG := apq8084_sec_trlte_twrp_defconfig
+TIMA_DEFCONFIG := tima_defconfig
 
 #TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 
@@ -46,12 +48,12 @@ TARGET_KERNEL_SOURCE := kernel/samsung/trltespr
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-#BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/trltetmo/custombootimg.mk
+#BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/trltespr/custombootimg.mk
 
 #TWRP specific build flags
 DEVICE_RESOLUTION := 1440x2560
-#TW_BRIGHTNESS_PATH := "/sys/devices/fd900000.qcom\x2cmdss_mdp/qcom,mdss_fb_primary.163/leds/lcd-backlight/brightness"
-#TW_MAX_BRIGHTNESS := 255
+TW_BRIGHTNESS_PATH := "/sys/devices/fd900000.qcom\x2cmdss_mdp/qcom\x2cmdss_fb_primary.163/leds/lcd-backlight/brightness"
+TW_MAX_BRIGHTNESS := 255
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
